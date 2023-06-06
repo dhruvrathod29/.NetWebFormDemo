@@ -79,7 +79,10 @@
           <div class="col-md-12">
             <div class="title-wrap d-flex justify-content-between">
               <div class="title-box">
-                <h2 class="title-a" data-text="About... ">About... </h2>
+                <h3>
+                    <u>About</u>
+
+                </h3>
                   
                   My Name is Dhruv Rathod Study from Darshan institute of Engineering & Technology college - Rajkot.<br />
                   I am a ASP.Net, .Net Core, .Net mvc, SQL Server & Angular Devloper 

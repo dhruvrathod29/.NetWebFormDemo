@@ -39,8 +39,10 @@
         <span></span>
         <span></span>
       </button>
-      <a class="navbar-brand text-brand" href="../AdminPanel/Home.aspx">.Net<span class="color-b">Devloper</span></a>
-
+      <%--<a class="navbar-brand text-brand" href="../AdminPanel/Home.aspx">.Net<span class="color-b">Devloper</span></a>--%>
+        <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Content/assets/img/DU.png"  Height="40px" Width="150px"/>
+     
+      
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
 
@@ -66,27 +68,7 @@
           <li class="nav-item">
             <a class="nav-link " href="contact.html">Contact</a>
           </li>
-            
-          <li class="nav-item">
-            <a class="nav-link " href="contact.html">Contact</a>
-              
-          <li class="nav-item">
-            <a class="nav-link " href="contact.html">Contact</a>
-              
-          <li class="nav-item">
-            <a class="nav-link " href="contact.html">Contact</a>
-              
-          <li class="nav-item">
-            <a class="nav-link " href="contact.html">Contact</a>
-              
-          <li class="nav-item">
-            <a class="nav-link " href="contact.html">Contact</a>
-
-          </li>
-          </li>
-          </li>
-          </li>
-          </li>
+          
         </ul>
       </div>
 
@@ -132,19 +114,7 @@
                  <li class="list-inline-item">
                 <a href="#">Contact</a>
               </li>
-                 <li class="list-inline-item">
-                <a href="#">Contact</a>
-                      <li class="list-inline-item">
-                <a href="#">Contact</a>
-                           <li class="list-inline-item">
-                <a href="#">Contact</a>
-                                <li class="list-inline-item">
-                <a href="#">Contact</a>
-              </li>
-
-              </li>
-              </li>
-              </li>
+                
             </ul>
           </nav>
           <div class="socials-a">
@@ -174,7 +144,7 @@
           <div class="copyright-footer">
             <p class="copyright color-text-a">
               &copy; Copyright
-              <span class="color-a">Web Devloper</span> All Rights Reserved.
+              <span class="color-a">Web Devloper | .Net Developer</span> All Rights Reserved.
             </p>
           </div>
           <div class="credits">
