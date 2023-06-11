@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
     
-    <title>.Net Devloper</title>
+    <title>.Net Devloper | Version System</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -40,7 +40,7 @@
         <span></span>
       </button>
       <%--<a class="navbar-brand text-brand" href="../AdminPanel/Home.aspx">.Net<span class="color-b">Devloper</span></a>--%>
-        <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Content/assets/img/DU.png"  Height="40px" Width="150px"/>
+        <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Content/assets/img/VersionSystemLogo.png"  Height="40px" Width="150px"/>
      
       
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
@@ -52,16 +52,20 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="../AdminPanel/Calculator.aspx">Calculator</a>
+            <a class="nav-link " href="../AdminPanel/Calculator.aspx">Country</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="property-grid.html">Property</a>
+            <a class="nav-link " href="property-grid.html">State</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="blog-grid.html">Blog</a>
+            <a class="nav-link " href="blog-grid.html">City</a>
           </li>
+              <li class="nav-item">
+            <a class="nav-link " href="blog-grid.html">Contact Category</a>
+         
+
 
    
 
@@ -100,16 +104,16 @@
                 <a href="#">Home</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">About</a>
+                <a href="#">Country</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Property</a>
+                <a href="#">State</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Blog</a>
+                <a href="#">City</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Contact</a>
+                <a href="#">Contact Category</a>
               </li>
                  <li class="list-inline-item">
                 <a href="#">Contact</a>
@@ -144,7 +148,7 @@
           <div class="copyright-footer">
             <p class="copyright color-text-a">
               &copy; Copyright
-              <span class="color-a">Web Devloper | .Net Developer</span> All Rights Reserved.
+              <span class="color-a">Version System Pvr Ltd. |  Web Devloper | .Net Developer</span> All Rights Reserved.
             </p>
           </div>
           <div class="credits">
