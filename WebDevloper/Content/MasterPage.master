@@ -40,39 +40,38 @@
         <span></span>
       </button>
       <%--<a class="navbar-brand text-brand" href="../AdminPanel/Home.aspx">.Net<span class="color-b">Devloper</span></a>--%>
-        <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Content/assets/img/VersionSystemLogo.png"  Height="40px" Width="150px"/>
+        <asp:HyperLink runat="server" ID="hlDarshan" NavigateUrl="~/AdminPanel/Home/Home.aspx">
+        <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Content/assets/img/VersionSystemLogo.png"   Height="40px" Width="150px"/>
+
+        </asp:HyperLink>
      
       
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
 
           <li class="nav-item">
-              
-            <a class="nav-link active" href="../AdminPanel/Home.aspx">Home</a>
+              <asp:HyperLink runat="server" ID="Home" class="nav-link active" NavigateUrl="~/AdminPanel/Home/Home.aspx">Home</asp:HyperLink>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="../AdminPanel/Calculator.aspx">Country</a>
+            <asp:HyperLink runat="server" ID="HyperLink1" class="nav-link " NavigateUrl="~/AdminPanel/LOC_Country/LOC_CountryList.aspx">Country</asp:HyperLink>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="property-grid.html">State</a>
+             <asp:HyperLink runat="server" ID="HyperLink2" class="nav-link " NavigateUrl="~/AdminPanel/Home/Home.aspx">State</asp:HyperLink>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="blog-grid.html">City</a>
+            <asp:HyperLink runat="server" ID="HyperLink3" class="nav-link " NavigateUrl="~/AdminPanel/Home/Home.aspx">City</asp:HyperLink>
           </li>
-              <li class="nav-item">
-            <a class="nav-link " href="blog-grid.html">Contact Category</a>
-         
-
-
-   
 
           <li class="nav-item">
-            <a class="nav-link " href="contact.html">Contact</a>
+            <asp:HyperLink runat="server" ID="HyperLink4" class="nav-link " NavigateUrl="~/AdminPanel/Home/Home.aspx">Contact Category</asp:HyperLink>
           </li>
-          
+          <li class="nav-item">
+            <asp:HyperLink runat="server" ID="HyperLink5" class="nav-link" NavigateUrl="~/AdminPanel/Home/Home.aspx">Contact</asp:HyperLink>
+          </li>
+           
         </ul>
       </div>
 
