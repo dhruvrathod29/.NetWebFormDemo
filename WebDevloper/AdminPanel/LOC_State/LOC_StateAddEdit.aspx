@@ -1,12 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Content/MasterPage.master" AutoEventWireup="true" CodeFile="LOC_CountryAddEdit.aspx.cs" Inherits="AdminPanel_LOC_Country_LOC_CountryAddEdit" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Content/MasterPage.master" AutoEventWireup="true" CodeFile="LOC_StateAddEdit.aspx.cs" Inherits="AdminPanel_LOC_State_LOC_StateAddEdit" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="cphHead" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphMainContent" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="cphMainContent" Runat="Server">
 
 
-
-    <style>
+     <style>
         h2 {
             position: relative;
             font-size: 14vw;
@@ -69,16 +68,16 @@
             <div class="row">
                 <div class="col-md-12 col-lg-8">
                     <div class="title-single-box">
-                        <h1 class="title-single">Country Add Edit</h1>
+                        <h1 class="title-single">State Add Edit</h1>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
                     <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="LOC_CountryList.aspx"><i class="fa-regular fa-address-book"></i>Country List</a>
+                                <a href="LOC_StateList.aspx"><i class="fa-regular fa-address-book"></i> State List</a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">Country Add Edit
+                            <li class="breadcrumb-item active" aria-current="page">State Add Edit
                             </li>
                         </ol>
                     </nav>
@@ -112,17 +111,37 @@
 
                 <div class="col-md-2">
                     <span style="color: #ff0000">*</span>
-                    Country Code :-
+                    State Name :-
                 </div>
                 <div class="col-md-3">
-                    <asp:TextBox runat="server" ID="txtCountryCode" placeholder="Enter Country Code" class="form-control">
+                    <asp:TextBox runat="server" ID="txtStateName" placeholder="Enter State Name" class="form-control">
 
                     </asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvCountryCode" runat="server" ErrorMessage="Please Enter Country Code" ControlToValidate="txtCountryCode" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvStateName" runat="server" ErrorMessage="Please Enter State Name" ControlToValidate="txtStateName" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             
                     <%--<input type="text" placeholder="Enter Country Code" required asp-for="CountryCode" class="form-control" />
                     <span asp-validation-for="CountryCode" class="text-danger"></span>--%>
                 </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-2">
+                    <span style="color: #ff0000">*</span>
+                    State Code:-
+                </div>
+                <div class="col-md-3">
+                    <asp:TextBox runat="server" ID="txtStateCode" placeholder="Enter State Code" class="form-control">
+                        
+                    </asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvStateCode" runat="server" ErrorMessage="Please Enter State Code" ControlToValidate="txtStateCode" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+            
+                    <%--<input type="text" placeholder="Enter Country Name" required asp-for="CountryName" class="form-control" />--%>
+                    <%--<span asp-validation-for="CountryName" class="text-danger"></span>--%>
+                </div>
+                <div class="col-md-1">
+                </div>
+
+               
             </div>
             <br />
 
@@ -136,7 +155,7 @@
 
                 <div class="col-md-1">
 
-                    <a class="btn btn-b" href="LOC_CountryList.aspx" type="submit" value="Cancel">Cancel
+                    <a class="btn btn-b" href="LOC_StateList.aspx" type="submit" value="Cancel">Cancel
                     </a>
 
 
@@ -149,6 +168,8 @@
 
 
   
+
+
 
 </asp:Content>
 

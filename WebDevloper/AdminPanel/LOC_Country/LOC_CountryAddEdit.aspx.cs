@@ -26,7 +26,24 @@ public partial class AdminPanel_LOC_Country_LOC_CountryAddEdit : System.Web.UI.P
 
         SqlDateTime strCreationDate = SqlDateTime.Null;
         SqlDateTime strModificationDate = SqlDateTime.Null;
-        
+
+        //Server side validation
+        String strErrorMessage = "";
+
+        if (txtCountryName.Text.Trim() == "")
+        {
+            strErrorMessage += "- Please Enter Country Name <br/>";
+        }
+        if (txtCountryCode.Text.Trim() == "")
+        {
+            strErrorMessage += "- Please Enter Country Code <br/>";
+        }
+
+        if (strErrorMessage!="")
+        {
+            lblMessage.Text = strErrorMessage;
+            return;
+        }
 
 
         SqlConnection objConn = new SqlConnection("data source = HP-PC; initial catalog = VersionSystemWebForm; Integrated Security = True");
@@ -58,4 +75,6 @@ public partial class AdminPanel_LOC_Country_LOC_CountryAddEdit : System.Web.UI.P
         txtCountryCode.Text = "";
         txtCountryName.Focus();
     }
+
+   
 }
