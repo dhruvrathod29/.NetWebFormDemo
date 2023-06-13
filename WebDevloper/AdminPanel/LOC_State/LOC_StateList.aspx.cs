@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -12,8 +13,21 @@ public partial class AdminPanel_LOC_State_LOC_StateList : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        SqlConnection objConn = new SqlConnection("data source = HP-PC; initial catalog = VersionSystemWebForm; Integrated Security = True");
-        objConn.Open(); 
+        if (!Page.IsPostBack)
+        {
+            FillGrideView();
+        }
+
+
+    }
+
+
+
+    private void FillGrideView()
+    {
+        SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["WebDeveloperConnectionString"].ConnectionString);
+      
+        objConn.Open();
         SqlCommand objCmd = objConn.CreateCommand();
 
         objCmd.CommandType = CommandType.StoredProcedure;
@@ -21,13 +35,14 @@ public partial class AdminPanel_LOC_State_LOC_StateList : System.Web.UI.Page
 
 
         SqlDataReader objSDR = objCmd.ExecuteReader();
-        gvLOC_State.DataSource = objSDR;
-        gvLOC_State.DataBind();
 
-        objConn.Close();    
+        if (objSDR.HasRows)
+        {
+            gvLOC_State.DataSource = objSDR;
+            gvLOC_State.DataBind();
+        }
 
-
+        objConn.Close();
     }
-
 
 }

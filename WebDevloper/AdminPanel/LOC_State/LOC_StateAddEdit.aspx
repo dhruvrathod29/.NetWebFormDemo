@@ -14,19 +14,19 @@
             text-transform: uppercase;
         }
 
-            h2::before {
-                content: attr(data-text);
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 0;
-                height: 100%;
-                color: #000000;
-                -webkit-text-stroke: 0vw #000000;
-                border-right: 3px solid #000000;
-                overflow: hidden;
-                animation: animate 6s linear infinite;
-            }
+        h2::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            color: #000000;
+            -webkit-text-stroke: 0vw #000000;
+            border-right: 3px solid #000000;
+            overflow: hidden;
+            animation: animate 6s linear infinite;
+        }
 
         @keyframes animate {
             0%,10%,100% {
@@ -46,10 +46,10 @@
             color: #ffffff;
         }
 
-            .btn.btn-a:hover {
-                background-color: #2eca6a;
-                color: #000000;
-            }
+        .btn.btn-a:hover {
+            background-color: #2eca6a;
+            color: #000000;
+        }
 
         .btn.btn-b {
             text-decoration: none;
@@ -57,10 +57,10 @@
             color: #ffffff;
         }
 
-            .btn.btn-b:hover {
-                background-color: rgba(255,0,0, 1);
-                color: #ffffff;
-            }
+        .btn.btn-b:hover {
+            background-color: rgba(255,0,0, 1);
+            color: #ffffff;
+        }
     </style>
 
     <section class="intro-single">
@@ -95,14 +95,13 @@
             <div class="row">
                 <div class="col-md-2">
                     <span style="color: #ff0000">*</span>
-                    Country Name :-
+                    Country :-
                 </div>
                 <div class="col-md-3">
-                    <asp:TextBox runat="server" ID="txtCountryName" placeholder="Enter Country Name" class="form-control">
-                        
-                    </asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvCountryName" runat="server" ErrorMessage="Please Enter Country Name" ControlToValidate="txtCountryName" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-            
+                    <asp:DropDownList ID="ddlCountryID" runat="server" class="form-control">
+                       
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="rfvCountry" runat="server" ErrorMessage="Please Select Country" ControlToValidate="ddlCountryID" Display="Dynamic" ForeColor="Red" InitialValue="-1"></asp:RequiredFieldValidator>
                     <%--<input type="text" placeholder="Enter Country Name" required asp-for="CountryName" class="form-control" />--%>
                     <%--<span asp-validation-for="CountryName" class="text-danger"></span>--%>
                 </div>
@@ -114,11 +113,8 @@
                     State Name :-
                 </div>
                 <div class="col-md-3">
-                    <asp:TextBox runat="server" ID="txtStateName" placeholder="Enter State Name" class="form-control">
-
-                    </asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtStateName" placeholder="Enter State Name" class="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvStateName" runat="server" ErrorMessage="Please Enter State Name" ControlToValidate="txtStateName" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-            
                     <%--<input type="text" placeholder="Enter Country Code" required asp-for="CountryCode" class="form-control" />
                     <span asp-validation-for="CountryCode" class="text-danger"></span>--%>
                 </div>
@@ -127,12 +123,10 @@
             <div class="row">
                 <div class="col-md-2">
                     <span style="color: #ff0000">*</span>
-                    State Code:-
+                    State Code :-
                 </div>
                 <div class="col-md-3">
-                    <asp:TextBox runat="server" ID="txtStateCode" placeholder="Enter State Code" class="form-control">
-                        
-                    </asp:TextBox>
+                    <asp:TextBox runat="server" ID="txtStateCode" placeholder="Enter State Code" class="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvStateCode" runat="server" ErrorMessage="Please Enter State Code" ControlToValidate="txtStateCode" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             
                     <%--<input type="text" placeholder="Enter Country Name" required asp-for="CountryName" class="form-control" />--%>
