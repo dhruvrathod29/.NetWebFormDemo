@@ -3,6 +3,32 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphMainContent" runat="Server">
+
+
+    <style>
+    .btn.btn-a {
+        text-decoration: none;
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+        .btn.btn-a:hover {
+            background-color: #2eca6a;
+            color: #000000;
+        }
+
+    .btn.btn-b {
+        text-decoration: none;
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+        .btn.btn-b:hover {
+            background-color: #ff0000;
+            color: #ffffff;
+        }
+</style>
+<!-- ======= Intro Single ======= -->
     <section class="intro-single">
         <div class="container">
             <div class="row">
@@ -38,27 +64,34 @@
                 </div>
             </div>
             <br />
-            <asp:GridView runat="server" ID="gvLOC_State" CssClass="table table-hover" AutoGenerateColumns="false">
+            <asp:Label runat="server" class="alert-success" style="color:#151414" ID="lblMessage" EnableViewState="false" />
+        
+            <br />
+            <asp:GridView runat="server" ID="gvLOC_State" CssClass="table table-hover" AutoGenerateColumns="false" OnRowCommand="gvState_RowCommand">
                 <Columns>
-                 
-
-                    <asp:BoundField DataField="CountryName" HeaderText="Country Name"/>
-
-                    <asp:BoundField DataField="StateName" HeaderText="State Name"/>
-                    <asp:BoundField DataField="StateCode" HeaderText="State Code"/>
 
 
-                    <asp:TemplateField>
+                    <asp:BoundField DataField="CountryName" HeaderText="Country Name" />
+
+                    <asp:BoundField DataField="StateName" HeaderText="State Name" />
+                    <asp:BoundField DataField="StateCode" HeaderText="State Code" />
+
+                    <asp:TemplateField HeaderText="Edit">
                         <ItemTemplate>
-
-                            <asp:HyperLink runat="server" ID="btnDelete" Text="Delete" class="btn btn-b">
-                                   <i class="fa-solid fa-trash"></i>
+                            <asp:HyperLink runat="server" ID="hlEdit" class="btn btn-a" NavigateUrl='<%# "~/AdminPanel/LOC_State/LOC_StateAddEdit.aspx?StateID="+Eval("StateID").ToString().Trim() %>'>
+                             <i class="fa-solid fa-pen-to-square"></i>
                             </asp:HyperLink>
-                       
-                          
                         </ItemTemplate>
                     </asp:TemplateField>
-                    
+                    <asp:TemplateField HeaderText="Delete">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="btnDelete" runat="server" class="btn btn-b" OnClientClick="return confirm('Are you sure you want to delete ')" CommandName="DeleteRecord" CommandArgument='<%# Eval("StateID").ToString() %>'>
+                            <i class="fa-solid fa-trash"></i>
+                            </asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+
                 </Columns>
             </asp:GridView>
         </div>
