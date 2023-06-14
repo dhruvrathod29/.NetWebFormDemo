@@ -95,12 +95,8 @@
                         </ItemTemplate>
                     </asp:TemplateField>
 
-
                 </Columns>
             </asp:GridView>
-
-
-
         </div>
     </section>
     <!-- End Intro Single-->

@@ -61,7 +61,6 @@ public partial class AdminPanel_LOC_Country_LOC_CountryList : System.Web.UI.Page
             objConn.Close(); 
         }
 
-        
     }
     #endregion
 

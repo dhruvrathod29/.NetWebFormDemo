@@ -24,23 +24,33 @@ public partial class AdminPanel_LOC_State_LOC_StateList : System.Web.UI.Page
     private void FillGrideView()
     {
         SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["WebDeveloperConnectionString"].ConnectionString);
-      
-        objConn.Open();
-        SqlCommand objCmd = objConn.CreateCommand();
 
-        objCmd.CommandType = CommandType.StoredProcedure;
-        objCmd.CommandText = "PR_LOC_State_SelectAll";
-
-
-        SqlDataReader objSDR = objCmd.ExecuteReader();
-
-        if (objSDR.HasRows)
+        try
         {
-            gvLOC_State.DataSource = objSDR;
-            gvLOC_State.DataBind();
-        }
+            objConn.Open();
+            SqlCommand objCmd = objConn.CreateCommand();
 
-        objConn.Close();
+            objCmd.CommandType = CommandType.StoredProcedure;
+            objCmd.CommandText = "PR_LOC_State_SelectAll";
+
+
+            SqlDataReader objSDR = objCmd.ExecuteReader();
+
+            if (objSDR.HasRows)
+            {
+                gvLOC_State.DataSource = objSDR;
+                gvLOC_State.DataBind();
+            }
+
+            objConn.Close();
+        }
+        catch (Exception ex)
+        { 
+            lblMessage.Text = ex.Message;   
+        }
+        finally { objConn.Close(); }
+
+       
     }
 
 
@@ -59,19 +69,30 @@ public partial class AdminPanel_LOC_State_LOC_StateList : System.Web.UI.Page
 
     private void DeleteState(SqlInt32 StateID)
     {
-
         SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["WebDeveloperConnectionString"].ConnectionString.Trim());
-        objConn.Open();
+        try
+        {
+            objConn.Open();
 
-        SqlCommand objCmd = objConn.CreateCommand();
-        objCmd.CommandType = CommandType.StoredProcedure;
-        objCmd.CommandText = "[PR_LOC_State_DeleteByPK]";
+            SqlCommand objCmd = objConn.CreateCommand();
+            objCmd.CommandType = CommandType.StoredProcedure;
+            objCmd.CommandText = "[PR_LOC_State_DeleteByPK]";
 
-        objCmd.Parameters.AddWithValue("@StateID", StateID.ToString());
-        objCmd.ExecuteNonQuery();
+            objCmd.Parameters.AddWithValue("@StateID", StateID.ToString());
+            objCmd.ExecuteNonQuery();
 
-        objConn.Close();
+            objConn.Close();
 
-        FillGrideView();
+            FillGrideView();
+        }
+        catch (Exception ex)
+        {
+            lblMessage.Text = ex.Message;
+        }
+        finally
+        {
+            objConn.Close();    
+        }
+       
     }
 }
