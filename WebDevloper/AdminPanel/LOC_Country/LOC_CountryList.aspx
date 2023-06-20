@@ -82,7 +82,7 @@
 
                     <asp:TemplateField HeaderText="Edit">
                         <ItemTemplate>
-                            <asp:HyperLink runat="server" ID="hlEdit" class="btn btn-a">
+                            <asp:HyperLink runat="server" ID="hlEdit" class="btn btn-a" NavigateUrl='<%#"~/AdminPanel/LOC_Country/LOC_CountryAddEdit.aspx?CountryID="+ Eval("CountryID").ToString().Trim() %>'>
                              <i class="fa-solid fa-pen-to-square"></i>
                             </asp:HyperLink>
                         </ItemTemplate>

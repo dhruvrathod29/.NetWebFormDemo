@@ -11,6 +11,7 @@ using System.Web.UI.WebControls;
 
 public partial class AdminPanel_LOC_State_LOC_StateList : System.Web.UI.Page
 {
+    #region Page_Load
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -20,7 +21,9 @@ public partial class AdminPanel_LOC_State_LOC_StateList : System.Web.UI.Page
         }
 
     }
+    #endregion
 
+    #region FillGridView
     private void FillGrideView()
     {
         SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["WebDeveloperConnectionString"].ConnectionString);
@@ -52,9 +55,9 @@ public partial class AdminPanel_LOC_State_LOC_StateList : System.Web.UI.Page
 
        
     }
+    #endregion
 
-
-  
+    #region gvState_RowCommand
     protected void gvState_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         if (e.CommandName=="DeleteRecord")
@@ -65,8 +68,9 @@ public partial class AdminPanel_LOC_State_LOC_StateList : System.Web.UI.Page
             }
         }
     }
+    #endregion
 
-
+    #region DeleteState Record
     private void DeleteState(SqlInt32 StateID)
     {
         SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["WebDeveloperConnectionString"].ConnectionString.Trim());
@@ -95,4 +99,6 @@ public partial class AdminPanel_LOC_State_LOC_StateList : System.Web.UI.Page
         }
        
     }
+
+    #endregion
 }

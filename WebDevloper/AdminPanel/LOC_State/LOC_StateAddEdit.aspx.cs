@@ -29,7 +29,6 @@ public partial class AdminPanel_LOC_State_LOC_StateAddEdit : System.Web.UI.Page
             {
                 
             }
-
             #endregion
         }
 
@@ -178,8 +177,15 @@ public partial class AdminPanel_LOC_State_LOC_StateAddEdit : System.Web.UI.Page
 
         try
         {
+            #region Connection Open
+            if (objConn.State != ConnectionState.Open)
+            {
+                objConn.Open();
+            }
+            #endregion
+
             #region Country DropDown
-            objConn.Open();
+
             SqlCommand objCmd = objConn.CreateCommand();
             objCmd.CommandType = CommandType.Text;
             objCmd.CommandText = "PR_LOC_Country_SelectForDropDown";
@@ -194,15 +200,25 @@ public partial class AdminPanel_LOC_State_LOC_StateAddEdit : System.Web.UI.Page
             }
 
             ddlCountryID.Items.Insert(0, new ListItem("---Select Country---", "-1"));
-
-            objConn.Close();
             #endregion
+
+            #region Conncetion Close
+            if (objConn.State == ConnectionState.Open)
+            {
+                objConn.Close();
+
+            }
+            #endregion
+
         }
         catch (Exception ex)
         {
             lblMessage.Text = ex.Message;
         }
-        finally { objConn.Close(); }
+        finally 
+        { 
+            objConn.Close();
+        }
 
         
     }
@@ -257,7 +273,15 @@ public partial class AdminPanel_LOC_State_LOC_StateAddEdit : System.Web.UI.Page
             {
                 lblMessage.Text = "No Data Available for the StateID = " + StateID.ToString().Trim() ;
             }
+            #endregion
 
+            #region Connection Close
+
+            if (objConn.State == ConnectionState.Open)
+            {
+                objConn.Close();
+
+            }
             #endregion
         }
         catch (Exception ex)
@@ -275,5 +299,6 @@ public partial class AdminPanel_LOC_State_LOC_StateAddEdit : System.Web.UI.Page
 
     }
     #endregion
+
 
 }
